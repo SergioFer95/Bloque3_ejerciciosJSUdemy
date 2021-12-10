@@ -1,19 +1,38 @@
 'use strict';
 
-window.addEventListener("load", () =>{
+window.addEventListener("load", () => {
 
-    var form = document.querySelector('[customName="form"]');
-
+    // TRABAJO SOBRE EL BOTÓN:
     var button = document.querySelector('[customName="btn"]');
+    
+    button.addEventListener("click", () => {
 
-    button.addEventListener("submit", () =>{
+        var answerName = document.querySelector("#name").value;
 
-    });
+        var answerSurname = document.querySelector("#surname").value;
 
-    button.addEventListener("click", () =>{
+        var answerAge = document.querySelector("#age").value;
+
+        var completeAnswers = answerName + " " + answerSurname + " " + answerAge;
+
+        console.log(completeAnswers);
+
+        // Intenta crear otra función aquí dentro que cree un botón, con el que podamos dar click y ver los resultados del formulario
         
     });
 
+    
 
+
+
+    // button.addEventListener("click", () => {
+
+    // });
+
+    // var showResults = document.querySelector('[customName="showResults"]');
+
+    // showResults.addEventListener("click", () =>{
+    //     document.write(completeAnswers);
+    // })
 
 });
