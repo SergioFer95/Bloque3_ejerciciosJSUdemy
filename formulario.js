@@ -4,7 +4,12 @@ window.addEventListener("load", () => {
 
     // TRABAJO SOBRE EL BOTÓN:
     var button = document.querySelector('[customName="btn"]');
-    
+
+    var results = document.querySelector('[customName="results"]');
+
+    var newButtom;
+    var user;
+    var completeAnswers;
     button.addEventListener("click", () => {
 
         var answerName = document.querySelector("#name").value;
@@ -13,26 +18,27 @@ window.addEventListener("load", () => {
 
         var answerAge = document.querySelector("#age").value;
 
-        var completeAnswers = answerName + " " + answerSurname + " " + answerAge;
+        // completeAnswers = anserName[answerName + " " + answerSurname + " " + answerAge
+        // ]
 
-        console.log(completeAnswers);
+        user = {
+            name: answerName,
+            surname: answerSurname,
+            age: answerAge
+        }
 
-        // Intenta crear otra función aquí dentro que cree un botón, con el que podamos dar click y ver los resultados del formulario
-        
+        console.log(user);
+
+        return () => {
+            newButtom = document.createElement("div");
+            document.body.insertAdjacentHTML("button");
+
+            return newButtom;
+
+            // newButtom = document.body.createElement('<button customName="newButtom">Ver respuestas</button>')
+        }
+
+
     });
-
-    
-
-
-
-    // button.addEventListener("click", () => {
-
-    // });
-
-    // var showResults = document.querySelector('[customName="showResults"]');
-
-    // showResults.addEventListener("click", () =>{
-    //     document.write(completeAnswers);
-    // })
 
 });
