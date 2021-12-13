@@ -13,7 +13,7 @@ window.addEventListener("load", () => {
 
         var answerName = document.querySelector("#name").value;
         var answerSurname = document.querySelector("#surname").value;
-        var answerAge = document.querySelector("#age").value;
+        var answerAge = parseInt(document.querySelector("#age").value);
 
         // Validación del formulario:
 
@@ -21,15 +21,20 @@ window.addEventListener("load", () => {
             alert("El nombre no es váido");
             return false;
         }
-        
-        if(answerSurname.trim() == null || answerName.trim().length == 0){
+
+        if(answerSurname.trim() == null || answerSurname.trim().length == 0){
             alert("El Apellido no es váido");
             return false;
         } 
 
-        if(answerAge.trim() == null || answerName.trim().length == 0 || answerAge == isNaN){
+        if(answerAge == undefined || answerAge <= 0 || isNaN(answerAge)){
             alert("La edad no es váida");
             return false;
+
+        }else if(answerAge <= 17){
+            alert("Eres menor de edad y no puedes participar en la encuesta.");
+            return false;
+            
         }
 
         // Para que esto fuese funcional, el evento debería de ser "submit" en vez de "click". El problema es que si usaba el evento "submit", me enviaba la información y no la recogía de la forma que el ejercicio me pedía, por lo que he preferido usar este otro evento "click" para realizar un "simulacro" de envio de formulario.
