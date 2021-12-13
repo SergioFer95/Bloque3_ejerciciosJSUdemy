@@ -6,20 +6,14 @@ window.addEventListener("load", () => {
     var button = document.querySelector('[customName="btn"]');
 
     var results = document.querySelector('[customName="results"]');
+    results.style.display = "none";
 
-    var newButtom;
     var user;
-    var completeAnswers;
     button.addEventListener("click", () => {
 
         var answerName = document.querySelector("#name").value;
-
         var answerSurname = document.querySelector("#surname").value;
-
         var answerAge = document.querySelector("#age").value;
-
-        // completeAnswers = anserName[answerName + " " + answerSurname + " " + answerAge
-        // ]
 
         user = {
             name: answerName,
@@ -27,18 +21,20 @@ window.addEventListener("load", () => {
             age: answerAge
         }
 
-        console.log(user);
+        results.style.display = "block";
 
-        return () => {
-            newButtom = document.createElement("div");
-            document.body.insertAdjacentHTML("button");
+        var paragraph = document.createElement("p");
+        paragraph.append("Nombre: " + answerName);
+        paragraph.append("Apellido: " + answerSurname);
+        paragraph.append("Edad: " + answerAge);
 
-            return newButtom;
-
-            // newButtom = document.body.createElement('<button customName="newButtom">Ver respuestas</button>')
-        }
+        results.append(paragraph);
 
 
+
+
+        return console.log(user);
     });
 
+    
 });
